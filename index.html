@@ -127,7 +127,7 @@
 </div>
 
 <script>
-const img = (label, bg) => `https://placehold.co/700x400/bg/ffffff?text={bg}/ffffff?text=bg/ffffff?text={encodeURIComponent(label)}`;
+const img = (label, bg) => "https://placehold.co/700x400/" + bg + "/ffffff?text=" + encodeURIComponent(label);
 
 const projects = [
   { title:"Ember & Oak", category:"branding", categoryLabel:"Brand Identity",
@@ -166,6 +166,100 @@ const projects = [
     deliverables:"Social Media Post, Campaign Creative",
     inquirySubject:"Monday Fuel Social Media Design" },
   { title:"Say It With Flowers", category:"social", categoryLabel:"Social Media",
-    tags:["Social Media","Floral","Lifestyle"], image:img("Say It With
+    tags:["Social Media","Floral","Lifestyle"], image:img("Say It With Flowers","7e22ce"), size:"medium",
+    shortDesc:"An elegant floral campaign for thoughtful gifting.",
+    fullDesc:"A floral social media design concept featuring a soft visual style, elegant typography, and a gifting-focused message.",
+    tools:"Adobe Photoshop, Adobe Illustrator", client:"Concept Project",
+    deliverables:"Social Media Post, Campaign Artwork",
+    inquirySubject:"Say It With Flowers Social Design" },
+  { title:"Street Food Fest", category:"posters", categoryLabel:"Poster Design",
+    tags:["Poster","Food Festival","Typography"], image:img("Street Food Fest","ea580c"), size:"large",
+    shortDesc:"A vibrant poster concept for a street food festival.",
+    fullDesc:"A festival poster design concept combining bold typography, energetic composition, and food-inspired visual elements.",
+    tools:"Adobe Illustrator, Adobe Photoshop", client:"Concept Project",
+    deliverables:"Event Poster, Promotional Artwork",
+    inquirySubject:"Street Food Fest Poster Design" },
+  { title:"Ember & Oak Menu", category:"print", categoryLabel:"Print Design
+",
+    tags:["Menu Design","Restaurant","Typography"], image:img("Restaurant Menu","166534"), size:"medium",
+    shortDesc:"A refined menu layout for a contemporary restaurant.",
+    fullDesc:"A restaurant menu concept focused on readable typography, clear food categories, and a premium dining aesthetic.",
+    tools:"Adobe InDesign, Adobe Illustrator", client:"Concept Project",
+    deliverables:"Menu Layout, Typography, Print Design",
+    inquirySubject:"Ember & Oak Menu Design" },
+  { title:"Kora Coffee Menu", category:"print", categoryLabel:"Print Design",
+    tags:["Menu Design","Cafe","Print"], image:img("Cafe Menu","1557514"), size:"medium",
+    shortDesc:"A clean café menu designed for easy ordering.",
+    fullDesc:"A café menu concept using clear sections, consistent typography, and a minimal layout.",
+    tools:"Adobe InDesign, Adobe Illustrator", client:"Concept Project",
+    deliverables:"Cafe Menu, Menu Layout, Print Design",
+    inquirySubject:"Kora Coffee Menu Design" }
+];
 
-> ⚠️ The response reached the length limit. Reply **continue** to get the rest.
+const grid = document.getElementById("projectsGrid");
+
+function renderProjects(filter = "all") {
+  grid.innerHTML = "";
+  const list = filter === "all" ? projects : projects.filter(function(p){ return p.category === filter; });
+  list.forEach(function(p) {
+    const card = document.createElement("article");
+    card.className = "project-card " + p.size;
+    card.innerHTML =
+      '<div class="project-image">' +
+        '<img src="' + p.image + '" alt="' + p.title + '" loading="lazy">' +
+        '<div class="project-overlay"><span>View Project</span></div>' +
+      '</div>' +
+      '<div class="project-info">' +
+        '<span class="project-category">' + p.categoryLabel + '</span>' +
+        '<h3>' + p.title + '</h3>' +
+        '<p>' + p.shortDesc + '</p>' +
+        '<div class="project-tags">' + p.tags.map(function(t){ return '<span class="tag">' + t + '</span>'; }).join("") + '</div>' +
+      '</div>';
+    card.addEventListener("click", function(){ openModal(p); });
+    grid.appendChild(card);
+  });
+}
+
+const modal = document.getElementById("projectModal");
+
+function openModal(p) {
+  document.getElementById("modalImage").src = p.image;
+  document.getElementById("modalImage").alt = p.title;
+  document.getElementById("modalTitle").textContent = p.title;
+  document.getElementById("modalCategory").textContent = p.categoryLabel;
+  document.getElementById("modalDesc").textContent = p.fullDesc;
+  document.getElementById("modalTools").textContent = p.tools;
+  document.getElementById("modalClient").textContent = p.client;
+  document.getElementById("modalDeliverables").textContent = p.deliverables;
+  document.getElementById("modalInquire").onclick = function() {
+    document.getElementById("subject").value = p.inquirySubject;
+    modal.classList.remove("open");
+  };
+  modal.classList.add("open");
+}
+
+document.getElementById("modalClose").onclick = function(){ modal.classList.remove("open"); };
+modal.onclick = function(e){ if (e.target === modal) modal.classList.remove("open"); };
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") modal.classList.remove("open"); });
+
+document.querySelectorAll(".filter-btn").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    btn.classList.add("active");
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const subject = document.getElementById("subject").value || "Portfolio Inquiry";
+  const message = document.getElementById("message").value;
+  window.location.href = "mailto:vamshidesigner5512@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message + "\n\n— " + name);
+});
+
+renderProjects();
+</script>
+</body>
+</html>
+
