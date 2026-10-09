@@ -552,7 +552,7 @@ footer span{color:var(--purple)}
   <!-- Quick Stats Bar -->
   <div class="hero-stats">
     <div class="stat-box">
-      <div class="stat-number">9+</div>
+      <div class="stat-number">15+</div>
       <div class="stat-label">Featured Projects</div>
     </div>
 
@@ -608,9 +608,10 @@ footer span{color:var(--purple)}
 
   <!-- Filter tabs -->
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" onclick="filterProjects('all', this)">All Works (<span id="countAll">9</span>)</button>
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Works (<span id="countAll">15</span>)</button>
     <button class="filter-btn" onclick="filterProjects('branding', this)">Logo & Branding</button>
     <button class="filter-btn" onclick="filterProjects('fnb', this)">F&B & Social Ads</button>
+    <button class="filter-btn" onclick="filterProjects('social', this)">Social Media Posts</button>
     <button class="filter-btn" onclick="filterProjects('typography', this)">Creative Typography</button>
     <button class="filter-btn" onclick="filterProjects('fashion', this)">Fashion & Editorial</button>
     <button class="filter-btn" onclick="filterProjects('illustration', this)">Vector Illustration</button>
@@ -754,6 +755,7 @@ footer span{color:var(--purple)}
         <h3 id="modalTitle" class="modal-title">Project Title</h3>
         <div id="modalClientWrap" class="modal-detail-line"><strong>Client / Context:</strong> <span id="modalClient"></span></div>
         <div id="modalDelivWrap" class="modal-detail-line"><strong>Deliverables:</strong> <span id="modalDeliverables"></span></div>
+        <div id="modalSizeWrap" class="modal-detail-line"><strong>Canvas Size:</strong> <span id="modalSize"></span></div>
         <p id="modalDesc" class="modal-desc"></p>
         <div class="back-tools-label">Tools & Techniques</div>
         <div id="modalTools" class="modal-tools-list"></div>
@@ -916,7 +918,99 @@ const PORTFOLIO_PROJECTS = [
     client: "Character Design / Vector Study",
     deliverables: "Infinite-Resolution Vector File (AI/SVG), Digital Sticker Assets, Mascot Art",
     inquirySubject: "Vector Illustration Inquiry"
-  }
+  },
+
+  {
+    id: "social-post-wok-fire",
+    title: "Wok & Fire — New Flavor Social Post",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["Social Post", "Food Campaign"],
+    image: "assets/social-post-wok-fire.png",
+    size: "1080 × 1080 px",
+    shortDesc: "Bold square food campaign post combining fiery product photography with high-impact promotional typography.",
+    fullDesc: "Original sample social-media artwork created for a fictional Asian street-food campaign. The composition uses flame, food photography, expressive display type, and a strong red-orange palette to create a high-energy promotional post.",
+    tools: ["Adobe Photoshop", "Photo Compositing", "Typography", "Social Media Design"],
+    client: "Concept Brand — Wok & Fire",
+    deliverables: "Instagram Feed Post, Campaign Artwork",
+    inquirySubject: "Wok & Fire Social Post Inquiry"
+  },
+  {
+    id: "social-post-nova-form",
+    title: "Nova Form — Mid-Season Edit",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["Social Post", "Fashion Campaign"],
+    image: "assets/social-post-nova-form.png",
+    size: "1080 × 1350 px",
+    shortDesc: "Editorial fashion post using a violet-pink palette, bold geometry, and a confident campaign hierarchy.",
+    fullDesc: "Original sample fashion social-media artwork for a fictional contemporary clothing label. The design pairs editorial portrait direction with oversized type, geometric framing, and a clear shopping call to action.",
+    tools: ["Adobe Photoshop", "Editorial Layout", "Art Direction", "Social Media Design"],
+    client: "Concept Brand — Nova Form",
+    deliverables: "Instagram Portrait Post, Campaign Key Visual",
+    inquirySubject: "Nova Form Social Post Inquiry"
+  },
+  {
+    id: "social-post-dawn-roasters",
+    title: "Dawn Roasters — New Morning Blend",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["Social Post", "Product Campaign"],
+    image: "assets/social-post-dawn-roasters.png",
+    size: "1080 × 1080 px",
+    shortDesc: "Warm specialty-coffee launch post with product storytelling, soft morning light, and a premium editorial finish.",
+    fullDesc: "Original sample product social post for a fictional specialty coffee brand. The visual combines packaging, atmospheric lighting, warm neutrals, and refined typography to present a new blend as a considered lifestyle product.",
+    tools: ["Adobe Photoshop", "Product Compositing", "Colour Grading", "Campaign Layout"],
+    client: "Concept Brand — Dawn Roasters",
+    deliverables: "Instagram Feed Post, Product Launch Creative",
+    inquirySubject: "Dawn Roasters Social Post Inquiry"
+  },
+  {
+    id: "social-post-pulse-room",
+    title: "Pulse Room — Move Together",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["Social Post", "Wellness Campaign"],
+    image: "assets/social-post-pulse-room.png",
+    size: "1080 × 1350 px",
+    shortDesc: "High-energy wellness event poster built around athletic movement, electric colour, and kinetic typography.",
+    fullDesc: "Original sample event social post for a fictional wellness studio. The artwork uses a cobalt, lime, and black palette with diagonal motion cues and oversized type to communicate energy, community, and movement.",
+    tools: ["Adobe Photoshop", "Photo Manipulation", "Kinetic Typography", "Poster Design"],
+    client: "Concept Brand — Pulse Room",
+    deliverables: "Instagram Portrait Post, Event Promotion",
+    inquirySubject: "Pulse Room Social Post Inquiry"
+  },
+  {
+    id: "social-post-luma-skin",
+    title: "Luma Skin — Glow Daily",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["Social Post", "Beauty Campaign"],
+    image: "assets/social-post-luma-skin.png",
+    size: "1080 × 1080 px",
+    shortDesc: "Minimal beauty product post with soft natural colour, premium typography, and a clear serum-focused hierarchy.",
+    fullDesc: "Original sample beauty campaign post for a fictional skincare brand. The composition uses an amber serum bottle, botanical details, warm light, and restrained typography to create a calm premium product story.",
+    tools: ["Adobe Photoshop", "Product Retouching", "Composition", "Social Media Design"],
+    client: "Concept Brand — Luma Skin",
+    deliverables: "Instagram Feed Post, Product Advertisement",
+    inquirySubject: "Luma Skin Social Post Inquiry"
+  },
+  {
+    id: "social-post-northline",
+    title: "Northline Residences — Live Above Ordinary",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["Social Post", "Real Estate Campaign"],
+    image: "assets/social-post-northline.png",
+    size: "1080 × 1350 px",
+    shortDesc: "Premium real-estate portrait post combining architectural photography, city-at-dusk colour, and structured selling points.",
+    fullDesc: "Original sample property-marketing social post for a fictional residential development. The design balances an architectural hero image with concise feature callouts, a refined navy-gold palette, and a premium lifestyle message.",
+    tools: ["Adobe Photoshop", "Architectural Compositing", "Grid Layout", "Property Marketing"],
+    client: "Concept Development — Northline Residences",
+    deliverables: "Instagram Portrait Post, Property Campaign Creative",
+    inquirySubject: "Northline Residences Social Post Inquiry"
+  },
+
 ];
 
 </script>
@@ -1052,6 +1146,13 @@ function openProjectModal(index) {
 
   const delivEl = document.getElementById('modalDeliverables');
   if (delivEl) delivEl.textContent = proj.deliverables || 'Brand Assets & Graphic Creatives';
+
+  const sizeEl = document.getElementById('modalSize');
+  const sizeWrap = document.getElementById('modalSizeWrap');
+  if (sizeEl && sizeWrap) {
+    sizeEl.textContent = proj.size || 'Not specified';
+    sizeWrap.style.display = proj.size ? '' : 'none';
+  }
 
   const toolsContainer = document.getElementById('modalTools');
   toolsContainer.innerHTML = '';
