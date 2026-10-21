@@ -552,7 +552,7 @@ footer span{color:var(--purple)}
   <!-- Quick Stats Bar -->
   <div class="hero-stats">
     <div class="stat-box">
-      <div class="stat-number">15+</div>
+      <div class="stat-number">30+</div>
       <div class="stat-label">Featured Projects</div>
     </div>
 
@@ -608,13 +608,14 @@ footer span{color:var(--purple)}
 
   <!-- Filter tabs -->
   <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" onclick="filterProjects('all', this)">All Works (<span id="countAll">15</span>)</button>
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Works (<span id="countAll">30</span>)</button>
     <button class="filter-btn" onclick="filterProjects('branding', this)">Logo & Branding</button>
     <button class="filter-btn" onclick="filterProjects('fnb', this)">F&B & Social Ads</button>
     <button class="filter-btn" onclick="filterProjects('social', this)">Social Media Posts</button>
     <button class="filter-btn" onclick="filterProjects('typography', this)">Creative Typography</button>
     <button class="filter-btn" onclick="filterProjects('fashion', this)">Fashion & Editorial</button>
     <button class="filter-btn" onclick="filterProjects('illustration', this)">Vector Illustration</button>
+    <button class="filter-btn" onclick="filterProjects('print', this)">Print & Packaging</button>
   </div>
 
   <!-- Dynamic Project Grid (Populated from projects.js) -->
@@ -1011,7 +1012,231 @@ const PORTFOLIO_PROJECTS = [
     inquirySubject: "Vector Illustration Inquiry"
   },
 
-
+  {
+    id: "brewline-logo",
+    title: "Brewline Coffee — Logo & Identity",
+    category: "branding",
+    categoryLabel: "Logo & Branding",
+    tags: ["New", "Brand Identity"],
+    image: "assets/brewline-logo.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Warm coffee-roaster identity with a bold monogram, earthy palette and a clean wordmark system.",
+    fullDesc: "Original sample artwork created for a fictional brand. Warm coffee-roaster identity with a bold monogram, earthy palette and a clean wordmark system.",
+    tools: ["Adobe Illustrator", "Logo Construction", "Brand Guidelines"],
+    client: "Concept Brand — Brewline Coffee",
+    deliverables: "Primary Logo, Monogram, Colour Palette",
+    inquirySubject: "Brewline Coffee Inquiry"
+  },
+  {
+    id: "aerofit-monogram",
+    title: "AeroFit Gym — Monogram Mark",
+    category: "branding",
+    categoryLabel: "Logo & Branding",
+    tags: ["New", "Brand Identity"],
+    image: "assets/aerofit-monogram.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Sharp athletic monogram built on a geometric grid with an electric lime accent on deep navy.",
+    fullDesc: "Original sample artwork created for a fictional brand. Sharp athletic monogram built on a geometric grid with an electric lime accent on deep navy.",
+    tools: ["Adobe Illustrator", "Geometric Grids", "Vector Marks"],
+    client: "Concept Brand — AeroFit",
+    deliverables: "Monogram, Icon Set, Brand Sheet",
+    inquirySubject: "AeroFit Gym Inquiry"
+  },
+  {
+    id: "verde-organics",
+    title: "Verde Organics — Brand Identity",
+    category: "branding",
+    categoryLabel: "Logo & Branding",
+    tags: ["New", "Brand Identity"],
+    image: "assets/verde-organics.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Fresh leaf-inspired identity for an organic grocery brand with a calm green palette.",
+    fullDesc: "Original sample artwork created for a fictional brand. Fresh leaf-inspired identity for an organic grocery brand with a calm green palette.",
+    tools: ["Adobe Illustrator", "Brand Identity", "Typography"],
+    client: "Concept Brand — Verde Organics",
+    deliverables: "Logo, Packaging Marks, Colour System",
+    inquirySubject: "Verde Organics Inquiry"
+  },
+  {
+    id: "kite-studio",
+    title: "Kite Studio — Creative Agency Logo",
+    category: "branding",
+    categoryLabel: "Logo & Branding",
+    tags: ["New", "Brand Identity"],
+    image: "assets/kite-studio.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Playful agency logo with a kite-shaped K and a high-contrast red and yellow palette.",
+    fullDesc: "Original sample artwork created for a fictional brand. Playful agency logo with a kite-shaped K and a high-contrast red and yellow palette.",
+    tools: ["Adobe Illustrator", "Logo Design", "Stationery"],
+    client: "Concept Brand — Kite Studio",
+    deliverables: "Logo, Business Card, Social Avatar",
+    inquirySubject: "Kite Studio Inquiry"
+  },
+  {
+    id: "smash-stack-burger",
+    title: "Smash Stack — Burger Ad Campaign",
+    category: "fnb",
+    categoryLabel: "F&B & Social Ads",
+    tags: ["New", "Food Campaign"],
+    image: "assets/smash-stack-burger.svg",
+    size: "1080 × 1350 px",
+    shortDesc: "High-energy burger ad with flame compositing and bold promo typography.",
+    fullDesc: "Original sample artwork created for a fictional brand. High-energy burger ad with flame compositing and bold promo typography.",
+    tools: ["Adobe Photoshop", "Photo Compositing", "Flame Effects"],
+    client: "Concept Brand — Smash Stack Burgers",
+    deliverables: "Instagram Ad, Promo Banner",
+    inquirySubject: "Smash Stack Inquiry"
+  },
+  {
+    id: "midnight-slice-pizza",
+    title: "Midnight Slice — Pizza Offer Creative",
+    category: "fnb",
+    categoryLabel: "F&B & Social Ads",
+    tags: ["New", "Food Campaign"],
+    image: "assets/midnight-slice-pizza.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Late-night pizza offer creative with dramatic lighting and a strong BOGO call to action.",
+    fullDesc: "Original sample artwork created for a fictional brand. Late-night pizza offer creative with dramatic lighting and a strong BOGO call to action.",
+    tools: ["Adobe Photoshop", "Colour Grading", "Typography"],
+    client: "Concept Brand — Midnight Slice Pizza",
+    deliverables: "Offer Post, Story Ad",
+    inquirySubject: "Midnight Slice Inquiry"
+  },
+  {
+    id: "cold-brew-splash",
+    title: "Cold Brew Co. — Splash Beverage Ad",
+    category: "fnb",
+    categoryLabel: "F&B & Social Ads",
+    tags: ["New", "Food Campaign"],
+    image: "assets/cold-brew-splash.svg",
+    size: "1080 × 1350 px",
+    shortDesc: "Refreshing iced-coffee ad with liquid splash compositing on a cool teal palette.",
+    fullDesc: "Original sample artwork created for a fictional brand. Refreshing iced-coffee ad with liquid splash compositing on a cool teal palette.",
+    tools: ["Adobe Photoshop", "Splash Compositing", "Product Ad"],
+    client: "Concept Brand — Cold Brew Co.",
+    deliverables: "Meta Ad Set, Story Creative",
+    inquirySubject: "Cold Brew Co. Inquiry"
+  },
+  {
+    id: "royal-biryani",
+    title: "Royal Dum Biryani — Festive Food Ad",
+    category: "fnb",
+    categoryLabel: "F&B & Social Ads",
+    tags: ["New", "Food Campaign"],
+    image: "assets/royal-biryani.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Rich festive biryani promo with saffron-gold accents and appetite-driven composition.",
+    fullDesc: "Original sample artwork created for a fictional brand. Rich festive biryani promo with saffron-gold accents and appetite-driven composition.",
+    tools: ["Adobe Photoshop", "Food Retouching", "Layout"],
+    client: "Concept Brand — Royal Dum Biryani",
+    deliverables: "Delivery Promo, Banner Set",
+    inquirySubject: "Royal Dum Biryani Inquiry"
+  },
+  {
+    id: "festival-sale-post",
+    title: "Mega Festival Sale — Retail Post",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["New", "Social Post"],
+    image: "assets/festival-sale-post.svg",
+    size: "1080 × 1080 px",
+    shortDesc: "Loud, colourful sale announcement built for scroll-stopping retail promotions.",
+    fullDesc: "Original sample artwork created for a fictional brand. Loud, colourful sale announcement built for scroll-stopping retail promotions.",
+    tools: ["Adobe Photoshop", "Promo Design", "Social Media Design"],
+    client: "Concept Brand — Retail Festival Sale",
+    deliverables: "Feed Post, Story, Banner",
+    inquirySubject: "Mega Festival Sale Inquiry"
+  },
+  {
+    id: "techwave-launch",
+    title: "TechWave X — Product Launch Post",
+    category: "social",
+    categoryLabel: "Social Media Post",
+    tags: ["New", "Social Post"],
+    image: "assets/techwave-launch.svg",
+    size: "1080 × 1350 px",
+    shortDesc: "Futuristic product teaser with neon glow, deep gradients and clean launch hierarchy.",
+    fullDesc: "Original sample artwork created for a fictional brand. Futuristic product teaser with neon glow, deep gradients and clean launch hierarchy.",
+    tools: ["Adobe Photoshop", "Neon Lighting", "Art Direction"],
+    client: "Concept Brand — TechWave",
+    deliverables: "Launch Post, Teaser Story",
+    inquirySubject: "TechWave X Inquiry"
+  },
+  {
+    id: "spice-route-menu",
+    title: "Spice Route — Restaurant Menu Design",
+    category: "print",
+    categoryLabel: "Print & Packaging",
+    tags: ["New", "Print Design"],
+    image: "assets/spice-route-menu.svg",
+    size: "1600 × 1130 px",
+    shortDesc: "Elegant two-column menu layout with clear price hierarchy, prepared in CMYK for print.",
+    fullDesc: "Original sample artwork created for a fictional brand. Elegant two-column menu layout with clear price hierarchy, prepared in CMYK for print.",
+    tools: ["Adobe InDesign", "Menu Layout", "CMYK Prepress"],
+    client: "Concept Brand — Spice Route Restaurant",
+    deliverables: "A4 Bi-fold Menu, Print-Ready PDF",
+    inquirySubject: "Spice Route Inquiry"
+  },
+  {
+    id: "summit-brochure",
+    title: "Summit Capital — Corporate Brochure",
+    category: "print",
+    categoryLabel: "Print & Packaging",
+    tags: ["New", "Print Design"],
+    image: "assets/summit-brochure.svg",
+    size: "1600 × 1130 px",
+    shortDesc: "Clean corporate brochure with a strong grid, navy palette and data-friendly layout.",
+    fullDesc: "Original sample artwork created for a fictional brand. Clean corporate brochure with a strong grid, navy palette and data-friendly layout.",
+    tools: ["Adobe InDesign", "Editorial Layout", "Grid Systems"],
+    client: "Concept Brand — Summit Capital",
+    deliverables: "Tri-fold Brochure, Cover & Spreads",
+    inquirySubject: "Summit Capital Inquiry"
+  },
+  {
+    id: "rollup-banner-fitzone",
+    title: "FitZone — Roll-Up Banner",
+    category: "print",
+    categoryLabel: "Print & Packaging",
+    tags: ["New", "Print Design"],
+    image: "assets/rollup-banner-fitzone.svg",
+    size: "900 × 1600 px",
+    shortDesc: "Tall roll-up banner designed for legibility at distance with a bold orange call to action.",
+    fullDesc: "Original sample artwork created for a fictional brand. Tall roll-up banner designed for legibility at distance with a bold orange call to action.",
+    tools: ["Adobe Photoshop", "Large-Format Design", "Prepress"],
+    client: "Concept Brand — FitZone Gym",
+    deliverables: "85 × 200 cm Roll-Up Banner",
+    inquirySubject: "FitZone Inquiry"
+  },
+  {
+    id: "chai-box-packaging",
+    title: "Masala Chai — Tea Box Packaging",
+    category: "print",
+    categoryLabel: "Print & Packaging",
+    tags: ["New", "Print Design"],
+    image: "assets/chai-box-packaging.svg",
+    size: "1600 × 1130 px",
+    shortDesc: "Premium tea packaging artwork with a rich brown and gold palette, built on a dieline.",
+    fullDesc: "Original sample artwork created for a fictional brand. Premium tea packaging artwork with a rich brown and gold palette, built on a dieline.",
+    tools: ["Adobe Illustrator", "Packaging Design", "Dieline Setup"],
+    client: "Concept Brand — Masala Chai Co.",
+    deliverables: "Box Dieline Artwork, Label",
+    inquirySubject: "Masala Chai Inquiry"
+  },
+  {
+    id: "dream-big-typography",
+    title: "Dream Big — Kinetic Typography Poster",
+    category: "typography",
+    categoryLabel: "Creative Typography",
+    tags: ["New", "Typography"],
+    image: "assets/dream-big-typography.svg",
+    size: "1080 × 1350 px",
+    shortDesc: "Expressive poster study exploring scale, weight contrast and layered display type.",
+    fullDesc: "Original sample artwork created for a fictional brand. Expressive poster study exploring scale, weight contrast and layered display type.",
+    tools: ["Adobe Illustrator", "Adobe Photoshop", "Type Experiments"],
+    client: "Personal Concept — Typography Study",
+    deliverables: "Poster Artwork, Wallpaper",
+    inquirySubject: "Dream Big Inquiry"
+  }
 ];
 
 </script>
