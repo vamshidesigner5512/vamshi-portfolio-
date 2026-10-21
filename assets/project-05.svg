@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4b211b"/><stop offset="1" stop-color="#11121b"/></linearGradient><pattern id="p" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M0 42L42 0" stroke="#fff0d8" stroke-opacity=".08" stroke-width="2"/></pattern></defs>
+<rect width="1200" height="900" fill="url(#g)"/><rect width="1200" height="900" fill="url(#p)"/>
+<circle cx="960" cy="180" r="230" fill="#e9a34b" opacity=".16"/><circle cx="960" cy="180" r="155" fill="none" stroke="#e9a34b" stroke-width="3" opacity=".75"/>
+<path d="M0 680 Q350 520 650 710 T1200 630 V900 H0Z" fill="#e9a34b" opacity=".12"/>
+<rect x="78" y="80" width="230" height="8" rx="4" fill="#e9a34b"/><text x="80" y="132" font-family="Arial,sans-serif" font-size="24" letter-spacing="5" fill="#fff0d8" opacity=".85">F&amp;B ADVERTISING</text>
+<text x="78" y="390" font-family="Arial,sans-serif" font-size="68" font-weight="700" fill="#fff0d8">WOK &amp; FIRE</text>
+<text x="82" y="452" font-family="Arial,sans-serif" font-size="25" fill="#e9a34b">SELF-INITIATED PORTFOLIO CONCEPT</text>
+<line x1="80" y1="760" x2="1120" y2="760" stroke="#fff0d8" stroke-opacity=".35"/><text x="80" y="810" font-family="Arial,sans-serif" font-size="22" fill="#fff0d8" opacity=".75">VAMSHI BOMMENA  /  VISUAL COMMUNICATION</text>
+<text x="1115" y="850" text-anchor="end" font-family="Arial,sans-serif" font-size="18" fill="#fff0d8" opacity=".55">05 / 51</text></svg>
